@@ -11,7 +11,7 @@ while main_menu != "help" or "continue":
         print("This npc generator will allow you to customize the attributes of your npc, or make a random one")
         time.sleep(4)
         print()
-        print("You will not be able to see a physical copy of your npcs, just what their attributes are. \n You can choose to make multiple or just one")
+        print("You will not be able to see a physical copy of your npcs, just what their attributes are. \n You must make at least ten")
         time.sleep(4)
         print()
         print("We hope this answered all of your questions about this generator")
@@ -19,5 +19,29 @@ while main_menu != "help" or "continue":
     elif main_menu == "continue":
         break 
 
-    print("Welcome to the Gnereator section")
+print("Welcome to the Generator section")
+time.sleep(1)
+amount_y_or_n = ""
+amount = int(input("To start, how many npcs would you like to generate?(must be at least 10) "))
+
+while amount_y_or_n != "yes" or "no":
+    print(f"You are generating {amount} npcs")
+    amount_y_or_n = input("Is this number correct? ")
+    if amount_y_or_n == "yes" and amount >=  10:
+        print("Moving on to the next step")
+        break
+    elif amount_y_or_n == "no":
+        new_amount = int(input("Please type in another number (at least 10) "))
+    else:
+        print("Sorry this number is invalid")
+        time.sleep(1)
+        int(input("Please type in a number that is at least 10: "))
     
+listofnames = []
+
+for name in range(amount):
+   namesofnpcs = input("Name of npc: ")
+   listofnames.append(name)
+
+print(listofnames)
+print(listofnames[5])
