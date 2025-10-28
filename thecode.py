@@ -1,6 +1,7 @@
+#Main menu section
 import time
 main_menu = ""
-while main_menu != "help" or "continue":
+while main_menu != "help" or "continue": 
     print("Hello, welcome to the npc generator, a generator for all your npc needs")
     time.sleep(1)
     main_menu = input("Welcome to the main menu, for any questions \ntype help, to continue on to making your npc type continue: ")
@@ -19,11 +20,11 @@ while main_menu != "help" or "continue":
     elif main_menu == "continue":
         break 
 
+#Generator section
 print("Welcome to the Generator section")
 time.sleep(1)
 amount_y_or_n = ""
-amount = int(input("To start, how many npcs would you like to generate?(must be at least 10) "))
-
+amount = int(input("How many npcs would you like to generate? Must be at least ten: "))
 while amount_y_or_n != "yes" or "no":
     print(f"You are generating {amount} npcs")
     amount_y_or_n = input("Is this number correct? ")
@@ -35,13 +36,28 @@ while amount_y_or_n != "yes" or "no":
     else:
         print("Sorry this number is invalid")
         time.sleep(1)
-        int(input("Please type in a number that is at least 10: "))
-    
+        amount = int(input("Please type in a number that is at least 10: "))
+
+ #naming section  
+
 listofnames = []
 
 for name in range(amount):
-   namesofnpcs = input("Name of npc: ")
+   namesofnpcs = str(input("Name of npc: "))
    listofnames.append(namesofnpcs)
 
-print(listofnames)
-print(listofnames[5])
+#Color section
+colors = []
+
+print("Moving on to the next step: Color")
+singleorall= input("What color would you like your npcs to be? You may choose to make the mass of them \n one color or make them each a random color indiividually \n please type all to customize all of them at once or single for individual \n customization: ")
+if singleorall == "single":
+    print("You have selected single")
+    for color in range(amount):
+        colorinput = input("What color would you like your npc to be? ")
+        colors.append(colorinput)
+elif singleorall == "all":
+    print("You have selected all")
+    colorinput= input("What color would you like all your npcs to be? ")
+    colors.append(colorinput)
+
