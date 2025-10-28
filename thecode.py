@@ -41,7 +41,7 @@ listofnames = []
 
 for name in range(amount):
    namesofnpcs = input("Name of npc: ")
-   listofnames.append(name)
+   listofnames.append(namesofnpcs)
 
 print(listofnames)
 print(listofnames[5])
