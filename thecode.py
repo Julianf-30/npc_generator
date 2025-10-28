@@ -31,7 +31,7 @@ while amount_y_or_n != "yes" or "no":
         print("Moving on to the next step")
         break
     elif amount_y_or_n == "no":
-        new_amount = int(input("Please type in another number (at least 10) "))
+        amount = int(input("Please type in another number (at least 10) "))
     else:
         print("Sorry this number is invalid")
         time.sleep(1)
