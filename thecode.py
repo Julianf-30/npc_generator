@@ -47,17 +47,32 @@ for name in range(amount):
    listofnames.append(namesofnpcs)
 
 #Color section
-colors = []
+import random
+color = []
+randomcolorchoice = 0
+randomcolorlist = ["Red", "Orange", "Green", "Blue","Yellow", "Indigo", "Violet", "Pink", "Cyan"]
+colorchoice = input("What color would you like your npc to be? you may choose a color or leave it to choice.\ntype choice to choose a color for all of your npcs or type random to leave it up to chance ")
+if colorchoice == "choice":
+    whatcolor = input("What color? ")
+    color.append(whatcolor)
+elif colorchoice == "random":
+    randomcolorchoice = random.choice(randomcolorlist)
+    print(f"Your color is {randomcolorchoice}")
+time.sleep(1)
+print("The rest of your npc's characteristics will be auto generated and then printed to you")
+time.sleep(1)
+#Height section
+heightchoices = ["5'10", "5'11", "6'0", "6'1", "6'2", "6'5" "6'7", "6'9", "5'3", "5'4", "5'7", "5'5", "5'1", "4'11", "4'10", "2'2", "0'5", "5'10", "5'11", "6'0", "6'1", "6'2", "6'5" "6'7", "6'9", "5'3", "5'4", "5'7", "5'5", "5'1", "4'11", "4'10", "2'2", "0'5"]
+height = random.choice(heightchoices)
 
-print("Moving on to the next step: Color")
-singleorall= input("What color would you like your npcs to be? You may choose to make the mass of them \n one color or make them each a random color indiividually \n please type all to customize all of them at once or single for individual \n customization: ")
-if singleorall == "single":
-    print("You have selected single")
-    for color in range(amount):
-        colorinput = input("What color would you like your npc to be? ")
-        colors.append(colorinput)
-elif singleorall == "all":
-    print("You have selected all")
-    colorinput= input("What color would you like all your npcs to be? ")
-    colors.append(colorinput)
+#style section t or f
+stylechoices1 = ["Cool", "Grunge", "Elegant", "Casual"]
+stylechoice2 = ["Emo", "Serious", "Preppy", "Chill"]
+styleselected = 0
+stylehelp = int(input("To influence your npc a little type any postiive number "))
+if stylehelp%2 == 0:
+    styleselected = random.choice(stylechoices1)
+elif stylehelp%2 == 1:
+    styleselected = random.choice(stylechoice2)
+    
 
