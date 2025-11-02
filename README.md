@@ -12,6 +12,7 @@ My name is Julian and I made this generator for roleplay/openworld games. The at
 - Age
 - Race
 - Name
+
 As you can see, those are the kinds of attributes that differentiate the npc's in openworld games. 
 
 ## How it works
