@@ -22,15 +22,13 @@ while main_menu != "help" or "continue":
 
 #Generator section
 
+#lists for randomly generating
 gender = ["Male", "Female"]
 heightchoices = ["5'10", "5'11", "6'0", "6'1", "6'2", "6'5" "6'7", "6'9", "5'3", "5'4", "5'7", "5'5", "5'1", "4'11", "4'10", "2'2", "0'5", "5'10", "5'11", "6'0", "6'1", "6'2", "6'5" "6'7", "6'9", "5'3", "5'4", "5'7", "5'5", "5'1", "4'11", "4'10", "2'2", "0'5"]
 randomracelist = ["White", "Spanish", "Middle Eastern", "Black", "Asian"]
-stylechoices1 = ["Cool", "Grunge", "Elegant", "Casual"]
-stylechoice2 = ["Emo", "Serious", "Preppy", "Chill", "Muscular"]
-agepossiblities = [13, 9, 5, 18, 21, 24, 30, 35, 40, 50, 60, 70, 80]
+stylechoices = ["Cool", "Grunge", "Elegant", "Casual", "Emo", "Serious", "Preppy", "Chill", "Muscular"]
 listofboynames = ["Julian", "James", "Nathan", "Grayson","Ethan","Michael","Liam","Logan","Alan","Alfonso"]
 listofgirlnames = ["Joana", "Isabella", "Sofia", "Lily", "Lila", "Cassidy", "Renee", "Grace", "Madeline", "Maya",]
-
 
 
 print("Welcome to the Generator section")
@@ -47,31 +45,23 @@ while amount_y_or_n != "yes" or "no":
         amount = int(input("Please type in another number (at least 10) "))
     else:
         print("Sorry this number is invalid")
-        time.sleep(1.01)
+        time.sleep(1.01)  #float
         amount = int(input("Please type in a number that is at least 10: ")) 
 
-#Final print section
+
+#selecting everything from the lists
 import random
-race = random.choice(randomracelist)
 
-
-height = random.choice(heightchoices)
-
-
-
-#style section t or f
-styleselected = 0
-stylehelp = int(input("To influence your npc a little type any postiive number "))
-if stylehelp%2 == 0:
-    styleselected = random.choice(stylechoices1)
-elif stylehelp%2 == 1:
-    styleselected = random.choice(stylechoice2)
-
-#Age section 
-age = random.choice(agepossiblities)
-true_gender = random.choice(gender)
-if gender == "Male":
-    name = random.choice(listofboynames)
-else:
-    name = random.choice(listofgirlnames)
-
+for each_npc in range(amount): #amount is the number of npcs being printed 
+    age = random.randint(1, 90)     #age 
+    true_gender = random.choice(gender)
+    name = 0
+    if gender == "Male":                    #naming
+        name = random.choice(listofboynames)
+    elif gender == "Female":
+        name = random.choice(listofgirlnames)               
+    styleselected = random.choice(stylechoices)      #style
+    race = random.choice(randomracelist)        #Race choice
+    height = random.choice(heightchoices)       #Height choice
+    #Final print statement
+    print(f"\nYour npc is {age} and {height} tall, is {race} and has a {styleselected} style.\n Their name is {name} and their gender is {true_gender}")
