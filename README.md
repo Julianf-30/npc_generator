@@ -41,7 +41,8 @@ I feel like this covers babies to old people
 I hope this explanation helped and answered any questions you may have had. 
 
 Thank you! 
-Julian Fechner
+
+--Julian Fechner
 
 
 
