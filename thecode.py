@@ -54,11 +54,10 @@ import random
 
 for each_npc in range(amount): #amount is the number of npcs being printed 
     age = random.randint(1, 90)     #age 
-    true_gender = random.choice(gender)
-    name = 0
-    if gender == "Male":                    #naming
+    true_gender = random.choice(gender)     #Gender
+    if true_gender == "Male":                    #naming
         name = random.choice(listofboynames)
-    elif gender == "Female":
+    elif true_gender == "Female":
         name = random.choice(listofgirlnames)               
     styleselected = random.choice(stylechoices)      #style
     race = random.choice(randomracelist)        #Race choice
